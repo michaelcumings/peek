@@ -1,0 +1,25 @@
+{
+  "name": "peek",
+  "version": "1.0.0",
+  "description": "For the University of Minnesota Full Stack Web Development Coding Boot Camp, December 2018.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicksedillos/peek.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicksedillos/peek/issues"
+  },
+  "homepage": "https://github.com/nicksedillos/peek#readme",
+  "dependencies": {
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-devtools": "^3.4.2"
+  }
+}
