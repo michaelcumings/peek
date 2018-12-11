@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import fb from '../config/firebase';
+import User from "../components/User.js";
+import Peek from "../components/Peek.js";
 
 class PrivatePage extends Component {
     constructor(props) {
@@ -19,6 +21,14 @@ class PrivatePage extends Component {
 <div className = "col-md-6">
             <h1>Welcome to Private Peek Page </h1>
             <button onClick={this.logout}>Logout</button>
+
+            <User />
+            <p></p>
+            <Peek />
+
+
+    
+
         </div>
         );
         }
