@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/nicksedillos/peek#readme",
   "dependencies": {
+    "express": "^4.16.4",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "redux-devtools": "^3.4.2"
