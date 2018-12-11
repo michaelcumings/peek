@@ -10,6 +10,7 @@ class App extends Component {
   //constructor for putting the user in a state
   constructor(props) {
     super(props);
+
     this.state = ({
       user: null,
     });
