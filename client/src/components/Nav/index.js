@@ -4,7 +4,21 @@ class Nav extends Component {
   render() {
     return (
       <div>
-        <p>Home| Login | Private | My Peeks</p>
+        {/* <p>Home | Login | Private | My Peeks</p> */}
+				<ul className="nav">
+  				<li className="nav-item">
+    				<a className="nav-link" href="#">Home</a>
+  				</li>
+					<li className="nav-item">
+    				<a className="nav-link" href="#">Login</a>
+  				</li>
+					<li className="nav-item">
+    				<a className="nav-link" href="#">Private</a>
+  				</li>
+					<li className="nav-item">
+    				<a className="nav-link" href="#">My Peeks</a>
+  				</li>
+				</ul>
       </div>
     );
   }

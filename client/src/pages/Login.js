@@ -1,14 +1,11 @@
 ////// Created by Sadiya /////
 //// THis creates the form and sets the state for the user email / password
 
-
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import fb from '../config/firebase';
 
-
 class Login extends Component {
-
     constructor(props) {
       super(props);
       //binding the methods
@@ -58,7 +55,6 @@ class Login extends Component {
         <button type="submit" onClick={this.login} className="btn btn-primary">Login</button>
         <button onClick={this.signup} style={{marginLeft: '25px'}} className="btn btn-success">Signup</button>
    </form>
-   <h3></h3>
    </div>
       );
     }
