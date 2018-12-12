@@ -1,11 +1,8 @@
-///Created by Sadiya 
-///Point of entery for the application
-
-import React, { Component } from 'react';
-// import './App.css';
-import fb from './config/firebase';
-import PrivatePage from './pages/PrivatePage';
-import Login from './pages/Login'
+import React, { Component } from "react";
+// import "./App.css";
+import fb from "./config/firebase";
+import PrivatePage from "./pages/PrivatePage";
+import Login from "./pages/Login"
 class App extends Component {
   //constructor for putting the user in a state
   constructor(props) {
@@ -26,10 +23,10 @@ class App extends Component {
       console.log(user);
       if (user) {
         this.setState({ user });
-        // localStorage.setItem('user', user.uid);
+        // localStorage.setItem("user", user.uid);
       } else {
         this.setState({ user: null });
-        // localStorage.removeItem('user');
+        // localStorage.removeItem("user");
       }
     });
   }

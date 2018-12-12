@@ -1,8 +1,4 @@
-/////Created by Sadiya 
-//// This is our firebase settings
-
-import firebase from 'firebase';
-
+import firebase from "firebase";
 var config = {
     apiKey: "AIzaSyCTtdBveH4rex039u5Fh_gEXNbK37ko1zQ",
     authDomain: "peek-2fb5b.firebaseapp.com",
