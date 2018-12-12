@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 // import './App.css';
 import Title from './components/Title';
+import Nav from './components/Nav';
 import fb from './config/firebase';
 import PrivatePage from './pages/PrivatePage';
 import Login from './pages/Login'
@@ -38,6 +39,7 @@ class App extends Component {
     return (
      <div className = "App">
      <Title></Title>
+     <Nav></Nav>
      {this.state.user ? ( <PrivatePage/>) : (<Login />)}
      </div>
     );
