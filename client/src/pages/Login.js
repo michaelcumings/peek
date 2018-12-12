@@ -1,17 +1,13 @@
-////// Created by Sadiya /////
-//// THis creates the form and sets the state for the user email / password
-
+// Created by Sadiya. This creates the form and sets the state for the user email and password.
 
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import fb from '../config/firebase';
 
-
 class Login extends Component {
-
     constructor(props) {
       super(props);
-      //binding the methods
+      // Binding the methods.
       this.login = this.login.bind(this);
       this.handleChange = this.handleChange.bind(this);
       this.signup = this.signup.bind(this);
@@ -25,8 +21,7 @@ class Login extends Component {
       this.setState({ [event.target.name]: event.target.value });
     }
   
-    //Using the method from firebase.js which includes our set up
-    //telling it to sign in with email and password
+    // Using the method from firebase.js which includes our setup. Telling it to sign in with email and password.
     login(event) {
       event.preventDefault();
       fb.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
@@ -34,7 +29,7 @@ class Login extends Component {
           console.log(error);
         });
     }
-  //prevent default action
+  // Prevent default action.
     signup(event){
       event.preventDefault();
       fb.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
@@ -58,7 +53,6 @@ class Login extends Component {
         <button type="submit" onClick={this.login} className="btn btn-primary">Login</button>
         <button onClick={this.signup} style={{marginLeft: '25px'}} className="btn btn-success">Signup</button>
    </form>
-   <h3></h3>
    </div>
       );
     }
