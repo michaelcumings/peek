@@ -38,9 +38,11 @@ class App extends Component {
   render() {
     return (
      <div className = "App">
-     <Title></Title>
-     <Nav></Nav>
-     {this.state.user ? ( <PrivatePage/>) : (<Login />)}
+      <div className="container-fluid">
+        <Title></Title>
+        <Nav></Nav>
+        {this.state.user ? ( <PrivatePage/>) : (<Login />)}
+      </div>
      </div>
     );
 }
