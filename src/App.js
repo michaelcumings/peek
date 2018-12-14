@@ -43,7 +43,7 @@ class App extends Component {
       <div className="container-fluid">
         <Title></Title>
         <Nav></Nav>
-        {this.state.user ? ( <PrivatePage/>) : (<Login />)}
+        {this.state.user ? ( <PrivatePage userID={this.state.user.uid} />) : (<Login />)}
       </div>
      </div>
     );
