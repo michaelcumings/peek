@@ -32,14 +32,14 @@ class Login extends Component {
     });
   };
   //StyledFirebaseAuth takes the ui specified above with buttons
-  //
+  //isSignedIn will track the state of the users login status
   render() {
     return (
       <div className = "App">
       <div className="container-fluid">
         <Title></Title>
       {this.state.isSignedIn ?(
-        ( <PrivatePage/>)
+        ( <PrivatePage/> )
       )
         :(
           <StyledFirebaseAuth
