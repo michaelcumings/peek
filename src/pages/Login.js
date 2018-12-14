@@ -1,60 +1,56 @@
-// Created by Sadiya. This creates the form and sets the state for the user email and password.
-
-import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
-import fb from '../config/firebase';
+import React, { Component } from "react";
+// import provider and auth that we exported from src/client.js
+import fb from "../config/firebase";
+import firebase from "firebase";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import PrivatePage from "./PrivatePage";
+import Title from "../components/Title";
+import Nav from "../components/Nav";
 
 class Login extends Component {
-    constructor(props) {
-      super(props);
-      // Binding the methods.
-      this.login = this.login.bind(this);
-      this.handleChange = this.handleChange.bind(this);
-      this.signup = this.signup.bind(this);
-      this.state = {
-        email: '',
-        password: ''
-      };
+  state = { isSignedIn: false };
+  //set a ui config, we will redirect on the login options
+  uiConfig = {
+    signInFlow: "popup",
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+      firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      firebase.auth.EmailAuthProvider.PROVIDER_ID
+    ],
+    //call back is when the login is success
+    callbacks: {
+      signInSuccess: () => false
     }
-  
-    handleChange(event) {
-      this.setState({ [event.target.name]: event.target.value });
-    }
-  
-    // Using the method from firebase.js which includes our setup. Telling it to sign in with email and password.
-    login(event) {
-      event.preventDefault();
-      fb.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-      }).catch((error) => {
-          console.log(error);
-        });
-    }
-  // Prevent default action.
-    signup(event){
-      event.preventDefault();
-      fb.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .catch((error) => {
-          console.log(error);
-        })
-    }
-    render() {
-      return (
-         <div className="col-md-6">
-         <form>
-        <div className="form-group">
-         <label htmlFor="exampleInputEmail1">Email address</label>
-         <input value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-         <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-         <div className="form-group">
-        <label htmlFor="exampleInputPassword1">Password</label>
-        <input value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-        </div>
-        <button type="submit" onClick={this.login} className="btn btn-primary">Login</button>
-        <button onClick={this.signup} style={{marginLeft: '25px'}} className="btn btn-success">Signup</button>
-   </form>
-   </div>
-      );
-    }
+  };
+
+  //call this function once components are mounted
+  componentDidMount = () => {
+    fb.auth().onAuthStateChanged(user => {
+      this.setState({ isSignedIn: !!user });
+    });
+  };
+  //StyledFirebaseAuth takes the ui specified above with buttons
+  //
+  render() {
+    return (
+      <div className = "App">
+      <div className="container-fluid">
+        <Title></Title>
+      {this.state.isSignedIn ?(
+        ( <PrivatePage/>)
+      )
+        :(
+          <StyledFirebaseAuth
+          uiConfig={this.uiConfig}
+          firebaseAuth={firebase.auth()}
+        />
+        ) 
+      }
+      </div>
+      </div>
+    )
   }
-  export default Login;
+}
+export default Login;
