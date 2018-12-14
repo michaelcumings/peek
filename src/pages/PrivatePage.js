@@ -16,15 +16,16 @@ class PrivatePage extends Component {
 
     //simple button with on Click
     render() {
+        const { userID } = this.props;
         return (
     
 <div className = "col-md-6">
             <h1>Welcome to Private Peek Page </h1>
             <button onClick={this.logout}>Logout</button>
 
-            <User />
+            <User userID={userID} />
             <p></p>
-            <Peek />
+            <Peek userID={userID} />
 
 
     

@@ -26,5 +26,5 @@ npm start<br />
 
 
 # Authors
-Nick Sadillos, Sadiya Jiru, Jeremy King, Michael Cumings Shavari Sangle<br />
+Nick Sedillos, Sadiya Jiru, Jeremy King, Michael Cumings, Sharvari Sangle<br />
 [View GitHub Repo](https://github.com/nicksedillos/peek)
