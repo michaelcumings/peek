@@ -14,17 +14,10 @@ function Nav() {
 				to="/Login"
 				className={window.location.pathname === "/Login" ? "nav-link active" : "nav-link"}
 			>
-				Login
+			Private Page
 			</Link>
 		</li>
-		<li className="nav-item">
-		<Link
-			to="/PrivatePage"
-			className={window.location.pathname === "/PrivatePage" ? "nav-link active" : "nav-link"}
-		>
-			Private Page
-		</Link>
-	</li>
+
 	<li className="nav-item">
 	<Link
 		to="/UserPeeks"

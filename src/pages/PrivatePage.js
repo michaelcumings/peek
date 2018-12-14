@@ -1,39 +1,30 @@
-import React, { Component } from 'react';
-import fb from '../config/firebase';
+import React, { Component } from "react";
+import fb from "../config/firebase";
 import User from "../components/User.js";
 import Peek from "../components/Peek.js";
+import firebase from "firebase";
+import Login from "./Login";
 
 class PrivatePage extends Component {
-    constructor(props) {
-        super(props);
-        this.logout = this.logout.bind(this);
-    }
+  //simple button with on Click
+  render() {
+    const { userID } = this.props;
+    return (
+      <div className="col-md-6">
 
-//signout with firebase
-    logout() {
-        fb.auth().signOut();
-    }
+    <span>
 
-    //simple button with on Click
-    render() {
-        const { userID } = this.props;
-        return (
-    
-<div className = "col-md-6">
-            <h1>Welcome to Private Peek Page </h1>
-            <button onClick={this.logout}>Logout</button>
+         <button onClick={() => firebase.auth().signOut()}> Sign Out</button>
+         <h1>Welcome - {firebase.auth().currentUser.displayName}</h1>
+         <img alt="" width="100px" height="100px"
+         src ={firebase.auth().currentUser.photoURL}></img>
+         </span>
 
-            <User userID={userID} />
-            <p></p>
-            <Peek userID={userID} />
-
-
-    
-
-        </div>
-        );
-        }
-    
-    }
-    export default PrivatePage;
-    
+        <User userID={userID} />
+        <p />
+        <Peek userID={userID} />
+      </div>
+    );
+  }
+}
+export default PrivatePage;
