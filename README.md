@@ -1,30 +1,23 @@
-# PEEK
+# Peek
 
-### Overview
+By Michael Cumings, Sadiya Jiru, Jeremy King, Sharvari Sangle, & Nick Sedillos.
+
+For the University of Minnesota Full Stack Web Development Coding Boot Camp, December 2018.
+
+* Repository: https://github.com/nicksedillos/peek
+* Deployment: https://peek-2fb5b.firebaseapp.com
+
+## Overview
 “Peek,” a social photo sharing app designed to emphasize geographic 
 relationships by placing location-based browsing at the center of the UI.
 
-### To run the app locally:
-git clone git@github.com:nicksedillos/peek.git<br />
-npm i<br />
-npm start<br />
+## To run in npm:
+		git clone git@github.com:nicksedillos/peek.git
+		npm i
+		npm start
 
-### PEEK is Hosted on Friebase
-[Click To Go To Deployed Site](https://peek-2fb5b.firebaseapp.com)<br />
-
-### Technologies used
-* Node.js<br />
-* React.js<br />
-* Firebase: Database/FireStore/Authentication/Hosting/Cloud Functions<br />
-* Google Maps API<br />
-
-
-
-
-
-
-
-
-# Authors
-Nick Sedillos, Sadiya Jiru, Jeremy King, Michael Cumings, Sharvari Sangle<br />
-[View GitHub Repo](https://github.com/nicksedillos/peek)
+## Technologies used
+* Node.js
+* React.js
+* Firebase: Database/FireStore/Authentication/Hosting/Cloud Functions
+* Google Maps API
