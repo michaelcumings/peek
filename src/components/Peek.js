@@ -25,7 +25,7 @@ class Peek extends React.Component {
     const peekRef = db.collection("peeks").add({
       username: this.state.username,
       tag: this.state.tag,
-      userID: 5,
+      userID: this.props.userID,
       description: this.state.description,
       image: this.state.image,
       location: this.state.location,
