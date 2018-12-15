@@ -5,9 +5,9 @@ class Home extends Component {
     return (
       <div>
 				<div className="jumbotron jumbotron-fluid">
-					<div class="container">
-						<h1 class="display-4">Fluid jumbotron</h1>
-						<p class="lead">Placeholder for the map view?</p>
+					<div className="container">
+						<h1 className="display-4">Fluid jumbotron</h1>
+						<p className="lead">Placeholder for the map view?</p>
 					</div>
 				</div>
 				<button type="button" class="btn btn-primary">New Peek</button>

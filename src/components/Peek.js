@@ -1,5 +1,6 @@
 import React from 'react';
 import firebase from "../config/firebase";
+import newpeek from "../utils/thispeek.js"
 
 class Peek extends React.Component {
     constructor() {
@@ -17,32 +18,53 @@ class Peek extends React.Component {
       }
     
     addPeek = e => {
-    e.preventDefault();
-    const db = firebase.firestore();
-    db.settings({
-      timestampsInSnapshots: true
-    });
-    const peekRef = db.collection("peeks").add({
-      username: this.state.username,
-      tag: this.state.tag,
-      userID: this.props.userID,
-      description: this.state.description,
-      image: this.state.image,
-      location: this.state.location,
-      ends: this.state.ends,
-      private: this.state.private
-    });  
-    this.setState({
-        username: "",
-        tag: "",
-        userID: "",
-        description: "",
-        image: "",
-        location: "",
-        ends: "",
-        private: ""
-    });
-    };
+      newpeek.write({
+          username: this.state.username,
+          tag: this.state.tag,
+          description: this.state.description,
+          image: this.state.image,
+          location: this.state.location,
+          ends: this.state.ends,
+          private: this.state.private
+        });  
+        this.setState({
+            username: "",
+            tag: "",
+            userID: "",
+            description: "",
+            image: "",
+            location: "",
+            ends: "",
+            private: ""
+        });
+
+      }
+    // e.preventDefault();
+    // const db = firebase.firestore();
+    // db.settings({
+    //   timestampsInSnapshots: true
+    // });
+    // const peekRef = db.collection("peeks").add({
+    //   username: this.state.username,
+    //   tag: this.state.tag,
+    //   userID: firebase.auth().currentUser.uid,
+    //   description: this.state.description,
+    //   image: this.state.image,
+    //   location: this.state.location,
+    //   ends: this.state.ends,
+    //   private: this.state.private
+    // });  
+    // this.setState({
+    //     username: "",
+    //     tag: "",
+    //     userID: "",
+    //     description: "",
+    //     image: "",
+    //     location: "",
+    //     ends: "",
+    //     private: ""
+    // });
+    // };
       
   render() {
     return (
