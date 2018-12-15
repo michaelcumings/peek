@@ -9,10 +9,9 @@ import PrivatePage from "./pages/PrivatePage"
 import UserPeeks from "./pages/UserPeeks"
 
 function App() {
-
-    return (
-      <Router>
-  <div>
+  return (
+    <Router>
+      <div>
         <Title></Title>
         <Nav />
         <Switch>
