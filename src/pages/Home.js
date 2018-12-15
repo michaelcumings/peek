@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LogInButton from '../components/LogInButton';
 
 class Home extends Component {
   render() {
@@ -10,7 +11,8 @@ class Home extends Component {
 						<p className="lead">Placeholder for the map view?</p>
 					</div>
 				</div>
-				<button type="button" class="btn btn-primary">New Peek</button>
+				{/* If user is logged in, display the New Peek button. Otherwise, display the Log In button. */}
+				<LogInButton />
 			</div>
     );
   }
