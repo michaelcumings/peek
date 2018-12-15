@@ -19,7 +19,6 @@ class Peek extends React.Component {
     
     addPeek = e => {
       thispeek.write({
-          username: this.state.username,
           tag: this.state.tag,
           description: this.state.description,
           image: this.state.image,
@@ -68,14 +67,16 @@ class Peek extends React.Component {
       
   render() {
     return (
+      <div>
+      <p>Add a Peek:</p>
         <form onSubmit={this.addPeek}>
-          <input
+          {/* <input
             type="text"
             name="username"
             placeholder="User name"
             onChange={this.updateInput}
             value={this.state.username}
-          />
+          /> */}
           <input
             type="text"
             name="tag"
@@ -142,6 +143,7 @@ class Peek extends React.Component {
 
           <button type="submit">Submit</button>
         </form>
+        </div>
         );
       }
    }
