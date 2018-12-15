@@ -6,6 +6,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import PrivatePage from "./PrivatePage";
 import Title from "../components/Title";
 import Nav from "../components/Nav";
+import "../App.css"
 
 class Login extends Component {
   state = { isSignedIn: false };
@@ -37,7 +38,6 @@ class Login extends Component {
     return (
       <div className = "App">
       <div className="container-fluid">
-        <Title></Title>
       {this.state.isSignedIn ?(
         ( <PrivatePage/> )
       )
