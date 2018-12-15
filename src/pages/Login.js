@@ -1,16 +1,15 @@
+// Dependencies
 import React, { Component } from "react";
 // import provider and auth that we exported from src/client.js
 import fb from "../config/firebase";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import PrivatePage from "./PrivatePage";
-import Title from "../components/Title";
-import Nav from "../components/Nav";
 import "../App.css"
 
 class Login extends Component {
   state = { isSignedIn: false };
-  //set a ui config, we will redirect on the login options
+  // Set a UI config. We will redirect on the login options.
   uiConfig = {
     signInFlow: "popup",
     signInOptions: [
@@ -20,35 +19,35 @@ class Login extends Component {
       firebase.auth.GithubAuthProvider.PROVIDER_ID,
       firebase.auth.EmailAuthProvider.PROVIDER_ID
     ],
-    //call back is when the login is success
+    // Call back is when the login is successful.
     callbacks: {
       signInSuccess: () => false
     }
   };
 
-  //call this function once components are mounted
+  // Call this function once components are mounted.
   componentDidMount = () => {
     fb.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user });
     });
   };
-  //StyledFirebaseAuth takes the ui specified above with buttons
-  //isSignedIn will track the state of the users login status
+  // StyledFirebaseAuth takes the UI specified above with buttons.
+  // isSignedIn will track the state of the user's login status.
   render() {
     return (
       <div className = "App">
-      <div className="container-fluid">
-      {this.state.isSignedIn ?(
-        ( <PrivatePage/> )
-      )
+        <div className="container-fluid">
+        {this.state.isSignedIn ?(
+          ( <PrivatePage/> )
+        )
         :(
           <StyledFirebaseAuth
-          uiConfig={this.uiConfig}
-          firebaseAuth={firebase.auth()}
-        />
+            uiConfig={this.uiConfig}
+            firebaseAuth={firebase.auth()}
+          />
         ) 
-      }
-      </div>
+        }
+        </div>
       </div>
     )
   }
