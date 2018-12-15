@@ -23,7 +23,7 @@ class User extends React.Component {
       timestampsInSnapshots: true
     });
     const userRef = db.collection("users").add({
-      userID: this.props.userID,
+      userID: firebase.auth().currentUser.uid,
       username: this.state.username,
       bio: this.state.bio
     });  
