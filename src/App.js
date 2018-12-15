@@ -11,7 +11,7 @@ import UserPeeks from "./pages/UserPeeks"
 function App() {
   return (
     <Router>
-      <div>
+      <div class="container">
         <Title></Title>
         <Nav />
         <Switch>
