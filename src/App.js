@@ -9,16 +9,15 @@ import PrivatePage from "./pages/PrivatePage"
 import UserPeeks from "./pages/UserPeeks"
 
 function App() {
-
-    return (
-      <Router>
-  <div>
+  return (
+    <Router>
+      <div class="container">
         <Title></Title>
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Login" component={Login} />
-          <Route exact path="/PrivatePage" component={PrivatePage} />
+          <Route exact path="/PrivatePage" component={Login} />
           <Route exact path="/UserPeeks" component={UserPeeks} />
         </Switch>
       </div>

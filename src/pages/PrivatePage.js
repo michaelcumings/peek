@@ -11,14 +11,11 @@ class PrivatePage extends Component {
     const { userID } = this.props;
     return (
       <div className="col-md-6">
-
-    <span>
-
-         <button onClick={() => firebase.auth().signOut()}> Sign Out</button>
-         <h1>Welcome - {firebase.auth().currentUser.displayName}</h1>
-         <img alt="" width="100px" height="100px"
-         src ={firebase.auth().currentUser.photoURL}></img>
-         </span>
+        <span>
+          <button onClick={() => firebase.auth().signOut()}> Sign Out</button>
+          <h1>Welcome - {firebase.auth().currentUser.displayName}</h1>
+          <img alt="" src={firebase.auth().currentUser.photoURL} />
+        </span>
 
         <User userID={userID} />
         <p />
