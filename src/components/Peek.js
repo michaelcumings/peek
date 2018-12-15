@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from "../config/firebase";
-import newpeek from "../utils/thispeek.js"
+import thispeek from "../utils/thispeek.js"
 
 class Peek extends React.Component {
     constructor() {
@@ -18,7 +18,7 @@ class Peek extends React.Component {
       }
     
     addPeek = e => {
-      newpeek.write({
+      thispeek.write({
           username: this.state.username,
           tag: this.state.tag,
           description: this.state.description,
