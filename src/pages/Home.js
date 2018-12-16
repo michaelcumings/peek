@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
+import Map from "../components/Maps";
 
 class Home extends Component {
   render() {
     return (
-      <div>
-				<div className="jumbotron jumbotron-fluid">
-					<div class="container">
-						<h1 class="display-4">Fluid jumbotron</h1>
-						<p class="lead">Placeholder for the map view?</p>
-					</div>
-				</div>
-				<button type="button" class="btn btn-primary">New Peek</button>
+			<div>
+			<button type="button" className="btn btn-primary">New Peek</button>
+			<Map/>
 			</div>
     );
   }

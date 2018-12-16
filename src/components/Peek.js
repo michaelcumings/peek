@@ -1,5 +1,7 @@
 import React from 'react';
 import firebase from "../config/firebase";
+import Map from "../components/Maps";
+
 
 class Peek extends React.Component {
     constructor() {
@@ -46,7 +48,9 @@ class Peek extends React.Component {
       
   render() {
     return (
+      
         <form onSubmit={this.addPeek}>
+         
           <input
             type="text"
             name="username"
@@ -117,9 +121,15 @@ class Peek extends React.Component {
             onChange={this.updateInput}
             value={this.state.private}
           /> */}
-
+       
           <button type="submit">Submit</button>
+          <Map/>  
+     
         </form>
+        
+     
+       
+     
         );
       }
    }

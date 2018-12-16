@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import fb from "../config/firebase";
+
 import User from "../components/User.js";
 import Peek from "../components/Peek.js";
 import firebase from "firebase";
-import Login from "./Login";
+
 
 class PrivatePage extends Component {
   //simple button with on Click

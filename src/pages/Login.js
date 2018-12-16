@@ -4,8 +4,6 @@ import fb from "../config/firebase";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import PrivatePage from "./PrivatePage";
-import Title from "../components/Title";
-import Nav from "../components/Nav";
 import "../App.css"
 
 class Login extends Component {

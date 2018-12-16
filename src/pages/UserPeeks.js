@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Title from "../components/Title";
-import Nav from "../components/Nav";
+
 class Home extends Component {
   render() {
     return (
