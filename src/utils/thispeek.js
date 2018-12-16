@@ -4,20 +4,22 @@ export default {
     write: (newpeek) => {
 
         if (!newpeek.image) {
-            return "Error-No Image";
+            console.log("thispeek.write failed; no image in request");
+            return;
         }
 
         if (!newpeek.location) {
-            return "Error-No Location";
+            console.log("thispeek.write failed; no location in request");
+            return;
         }
 
         let vends = false;
-        if (newpeek.ends = "on") {
+        if (newpeek.ends === "on") {
             vends = true;
         }
 
         let vprivate = false;
-        if (newpeek.private = "on") {
+        if (newpeek.private === "on") {
             vprivate = true;
         }
 
@@ -31,17 +33,21 @@ export default {
 
         const db = firebase.firestore();
         db.settings({
-        timestampsInSnapshots: true
-        });
-        db.collection("peeks").add({
-        username: vusername,
-        tag: vtag,
-        userID: user.uid,
-        description: vdescription,
-        image: vimage,
-        location: vlocation,
-        ends: vends,
-        private: vprivate
+            timestampsInSnapshots: true
+            });
+            db.collection("peeks").add({
+            username: vusername,
+            tag: vtag,
+            userID: user.uid,
+            description: vdescription,
+            image: vimage,
+            location: vlocation,
+            ends: vends,
+            private: vprivate
         });  
     },
+
+    // update: (change) => {
+
+    // }
 };
