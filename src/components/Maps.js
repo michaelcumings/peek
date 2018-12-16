@@ -6,8 +6,6 @@ const mapStyles = {
   height: '30%'
 };
 
-
-
 export class MapContainer extends Component {
   state = {
     showingInfoWindow: false,
@@ -32,7 +30,7 @@ export class MapContainer extends Component {
   };
 
   render() {
-    console.log(JSON.stringify(CurrentLocation.centerAroundCurrentLocation));
+  
     return (
       
       <CurrentLocation
@@ -60,23 +58,3 @@ export default GoogleApiWrapper({
   apiKey: 'AIzaSyDg9Ng1ytm4frd8d6cp9O7IOBDvYEStDQw'
 })(MapContainer);
 
-
-// export class MapContainer extends Component {
-//   render() {
-//     return (
-//       <Map
-//         google={this.props.google}
-//         zoom={14}
-//         style={mapStyles}
-//         initialCenter={{
-//          lat: 44.986656,
-//          lng: -93.258133
-//         }}
-//       />
-//     );
-//   }
-// }
-
-// export default GoogleApiWrapper({
-//   apiKey: 'AIzaSyDg9Ng1ytm4frd8d6cp9O7IOBDvYEStDQw'
-// })(MapContainer);

@@ -127,9 +127,6 @@ class Peek extends React.Component {
      
         </form>
         
-     
-       
-     
         );
       }
    }

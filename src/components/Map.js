@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import thisPeek from "../utils/thispeek.js";
+import thisUser from "../utils/thisuser";
 const mapStyles = {
   map: {
     position: 'absolute',
-    width: '100%',
-    height: '100%'
+    width: '70%',
+    height: '30%'
   }
 };
 
@@ -43,6 +44,20 @@ export class CurrentLocation extends React.Component {
           let center = new maps.LatLng(current.lat, current.lng);
           map.panTo(center);
           console.log("I am in recenterMap" + center);
+         
+          thisUser.write({
+            bio: this.state.bio,
+          }); 
+     
+          thisPeek.write({
+            tag: this.state.tag,
+            description: this.state.description,
+            image: this.state.image,
+            location: this.state.currentLocation,
+            ends: this.state.ends,
+            private: this.state.private
+          }); 
+   
         }
       }
 

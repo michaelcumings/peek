@@ -11,11 +11,10 @@ import UserPeeks from "./pages/UserPeeks";
 
 
 function App() {
-
-    return (
-      <Router>
-      <div>
-        <Title></Title>        
+  return (
+    <Router>
+      <div class="container">
+        <Title></Title>
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
