@@ -11,7 +11,6 @@ class Home extends Component {
   
 
 				{/* If user is logged in, display the New Peek button. Otherwise, display the Log In button. */}
-	
 			</div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from "../config/firebase";
 import Map from "../components/Maps";
+import thispeek from "../utils/thispeek.js"
 
 
 class Peek extends React.Component {
@@ -19,45 +20,66 @@ class Peek extends React.Component {
       }
     
     addPeek = e => {
-    e.preventDefault();
-    const db = firebase.firestore();
-    db.settings({
-      timestampsInSnapshots: true
-    });
-    const peekRef = db.collection("peeks").add({
-      username: this.state.username,
-      tag: this.state.tag,
-      userID: this.props.userID,
-      description: this.state.description,
-      image: this.state.image,
-      location: this.state.location,
-      ends: this.state.ends,
-      private: this.state.private
-    });  
-    this.setState({
-        username: "",
-        tag: "",
-        userID: "",
-        description: "",
-        image: "",
-        location: "",
-        ends: "",
-        private: ""
-    });
-    };
+      thispeek.write({
+          tag: this.state.tag,
+          description: this.state.description,
+          image: this.state.image,
+          location: this.state.location,
+          ends: this.state.ends,
+          private: this.state.private
+        });  
+        this.setState({
+            username: "",
+            tag: "",
+            userID: "",
+            description: "",
+            image: "",
+            location: "",
+            ends: "",
+            private: ""
+        });
+
+      }
+    // e.preventDefault();
+    // const db = firebase.firestore();
+    // db.settings({
+    //   timestampsInSnapshots: true
+    // });
+    // const peekRef = db.collection("peeks").add({
+    //   username: this.state.username,
+    //   tag: this.state.tag,
+    //   userID: firebase.auth().currentUser.uid,
+    //   description: this.state.description,
+    //   image: this.state.image,
+    //   location: this.state.location,
+    //   ends: this.state.ends,
+    //   private: this.state.private
+    // });  
+    // this.setState({
+    //     username: "",
+    //     tag: "",
+    //     userID: "",
+    //     description: "",
+    //     image: "",
+    //     location: "",
+    //     ends: "",
+    //     private: ""
+    // });
+    // };
       
   render() {
     return (
-      
+      <div>
+      <p>Add a Peek:</p>
         <form onSubmit={this.addPeek}>
-         
-          <input
+          {/* <input
+
             type="text"
             name="username"
             placeholder="User name"
             onChange={this.updateInput}
             value={this.state.username}
-          />
+          /> */}
           <input
             type="text"
             name="tag"
@@ -126,7 +148,7 @@ class Peek extends React.Component {
           <Map/>  
      
         </form>
-        
+        </div>
         );
       }
    }
