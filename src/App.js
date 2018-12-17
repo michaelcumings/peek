@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css"
 import Title from "./components/Title";
 import Nav from "./components/Nav";
-import Home from "./pages/Home"
-import Login from "./pages/Login"
-import PrivatePage from "./pages/PrivatePage"
-import UserPeeks from "./pages/UserPeeks"
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import PrivatePage from "./pages/PrivatePage";
+import UserPeeks from "./pages/UserPeeks";
+
 
 function App() {
   return (
@@ -19,9 +20,11 @@ function App() {
           <Route exact path="/Login" component={Login} />
           <Route exact path="/PrivatePage" component={Login} />
           <Route exact path="/UserPeeks" component={UserPeeks} />
-        </Switch>
+          </Switch>
+    
       </div>
     </Router>
+
   );
 }
 

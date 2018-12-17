@@ -1,6 +1,8 @@
 import React from 'react';
 import firebase from "../config/firebase";
+import Map from "../components/Maps";
 import thispeek from "../utils/thispeek.js"
+
 
 class Peek extends React.Component {
     constructor() {
@@ -71,6 +73,7 @@ class Peek extends React.Component {
       <p>Add a Peek:</p>
         <form onSubmit={this.addPeek}>
           {/* <input
+
             type="text"
             name="username"
             placeholder="User name"
@@ -140,8 +143,10 @@ class Peek extends React.Component {
             onChange={this.updateInput}
             value={this.state.private}
           /> */}
-
+       
           <button type="submit">Submit</button>
+          <Map/>  
+     
         </form>
         </div>
         );
