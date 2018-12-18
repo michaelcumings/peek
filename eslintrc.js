@@ -1,15 +1,34 @@
-module.exports = eslintConfiguration = {
-  // Parser options https://eslint.org/docs/user-guide/configuring#specifying-parser-options
-  "parserOptions": {
-    // Required for certain syntax usages
-    "ecmaVersion": 6
+var eslintConfiguration = {
+  "parserOptions": { // Parser options https://eslint.org/docs/user-guide/configuring#specifying-parser-options
+    "ecmaVersion": 6, // Required for certain syntax usages
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "plugins": [
-    "promise"
+    "promise",
+    "react"
   ],
-  "extends": "eslint:recommended",
-  // Rules https://eslint.org/docs/rules/
-  "rules": {
+  "settings": { // Adding shared settings https://eslint.org/docs/user-guide/configuring#adding-shared-settings
+    "react": { // ESLint-Plugin-React configuration https://github.com/yannickcr/eslint-plugin-react#configuration
+      "createClass": "createReactClass", // Regex for Component Factory to use,
+                                          // default to "createReactClass"
+      "pragma": "React",  // Pragma to use, default to "React"
+      "version": "15.0", // React version, default to the latest React stable release
+      "flowVersion": "0.53" // Flow version
+    },
+    "propWrapperFunctions": [ // ESLint-Plugin-React configuration (continued) https://github.com/yannickcr/eslint-plugin-react#configuration
+        // The names of any function used to wrap propTypes, e.g. `forbidExtraProps`. If this isn't set, any propTypes wrapped in a function will be skipped.
+        "forbidExtraProps",
+        {"property": "freeze", "object": "Object"},
+        {"property": "myFavoriteWrapper"}
+    ]
+  },
+  "extends": [ // Extending configuration files https://eslint.org/docs/user-guide/configuring#extending-configuration-files
+    "eslint:recommended",
+    "react-app",
+  ],
+  "rules": { // Rules https://eslint.org/docs/rules/
     // Removed rule "disallow the use of console" from recommended eslint rules
     "no-console": "off",
     // Removed rule "disallow multiple spaces in regular expressions" from recommended eslint rules
@@ -84,6 +103,9 @@ module.exports = eslintConfiguration = {
     //Enforces the use of catch() on un-returned promises
     "promise/catch-or-return": 2,
     // Warn against nested then() or catch() statements
-    "promise/no-nesting": 1
+    "promise/no-nesting": 1,
+    "react/jsx-uses-vars": 1 // https://github.com/yannickcr/eslint-plugin-react#jsx-specific-rules
   }
-}
+};
+
+module.exports = eslintConfiguration;
