@@ -1,24 +1,48 @@
 import React from 'react';
 import firebase from "../config/firebase";
 import Map from "../components/Maps";
-import thispeek from "../utils/thispeek.js"
+import thispeek from "../utils/thispeek.js";
+import ImgButton from "../components/ImgButton.js";
 
+// This component simply provides some fields to test writes to the firestore db
+
+// image will be assigned to a file later on
+let imageupload = null;
 
 class Peek extends React.Component {
+
+    // this is the callback function to get the URL to an uploaded file
+    // from the ImgButton component, and write it to this.state.image
+    urlCallback = (imageURL) => {
+        this.setState({
+          image: imageURL
+        });
+      }
+
+    // sets the initial state for the peek attributes to empty
     constructor() {
         super();
         this.state = {
-            bio: "",
-            username: ""
-        };
+          tag: "",
+          description: "",
+          image: null,
+          location: "",
+          ends: "",
+          private: ""
+        }
     }
 
+    // update state whenever a tracked form field is changed
     updateInput = e => {
         this.setState({
           [e.target.name]: e.target.value
         });
       }
+
     
+    // the function called to add a peek to the firestore db
+    // each attribute is taken from state, which is taken from form fields
+    // verification/cleaning is managed in thispeek.js   
     addPeek = e => {
       thispeek.write({
           tag: this.state.tag,
@@ -28,58 +52,33 @@ class Peek extends React.Component {
           ends: this.state.ends,
           private: this.state.private
         });  
+        // after the peek is written, form field values are reset to blank
         this.setState({
             username: "",
             tag: "",
             userID: "",
             description: "",
-            image: "",
+            image: null,
             location: "",
             ends: "",
             private: ""
         });
 
       }
-    // e.preventDefault();
-    // const db = firebase.firestore();
-    // db.settings({
-    //   timestampsInSnapshots: true
-    // });
-    // const peekRef = db.collection("peeks").add({
-    //   username: this.state.username,
-    //   tag: this.state.tag,
-    //   userID: firebase.auth().currentUser.uid,
-    //   description: this.state.description,
-    //   image: this.state.image,
-    //   location: this.state.location,
-    //   ends: this.state.ends,
-    //   private: this.state.private
-    // });  
-    // this.setState({
-    //     username: "",
-    //     tag: "",
-    //     userID: "",
-    //     description: "",
-    //     image: "",
-    //     location: "",
-    //     ends: "",
-    //     private: ""
-    // });
-    // };
       
   render() {
     return (
       <div>
       <p>Add a Peek:</p>
         <form onSubmit={this.addPeek}>
-          {/* <input
+          {/* These are user-provided fields for peek db info, additional fields are
+          provided for in thispeek.js */}
 
-            type="text"
-            name="username"
-            placeholder="User name"
-            onChange={this.updateInput}
-            value={this.state.username}
-          /> */}
+          {/* The first button is its own component containing the logic to:
+          1. Take a file from the user
+          2. Put the file into firebase storage
+          3. return the image URL to this component with the callback function */}
+          <ImgButton callbackFromParent={this.urlCallback} />
           <input
             type="text"
             name="tag"
@@ -93,13 +92,6 @@ class Peek extends React.Component {
             placeholder="Description"
             onChange={this.updateInput}
             value={this.state.description}
-          />
-          <input
-            type="text"
-            name="image"
-            placeholder="Image"
-            onChange={this.updateInput}
-            value={this.state.image}
           />
           <input
             type="text"
@@ -118,14 +110,6 @@ class Peek extends React.Component {
             onChange={this.updateInput} />
         </label>
 
-          {/* <input
-            type="text"
-            name="ends"
-            placeholder="Ends?"
-            onChange={this.updateInput}
-            value={this.state.ends}
-          /> */}
-
         <label>
           Private?:
           <input
@@ -134,15 +118,6 @@ class Peek extends React.Component {
             checked={this.state.private}
             onChange={this.updateInput} />
         </label>
-
-
-          {/* <input
-            type="text"
-            name="private"
-            placeholder="Private?"
-            onChange={this.updateInput}
-            value={this.state.private}
-          /> */}
        
           <button type="submit">Submit</button>
           <Map/>  

@@ -1,4 +1,6 @@
 import firebase from "firebase";
+import "firebase/storage";
+
 var config = {
     apiKey: "AIzaSyCTtdBveH4rex039u5Fh_gEXNbK37ko1zQ",
     authDomain: "peek-2fb5b.firebaseapp.com",
@@ -8,5 +10,11 @@ var config = {
     messagingSenderId: "511969212938"
   };
 
-  const fb = firebase.initializeApp(config);
-export default fb;
+const fb = firebase.initializeApp(config);
+
+const storage = firebase.storage();
+
+export {
+  storage, firebase as default
+}
+
