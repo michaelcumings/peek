@@ -49,7 +49,7 @@ export default {
         db.settings({
             timestampsInSnapshots: true
             });
-            db.collection("peeks").add({
+        db.collection("peeks").add({
             username: vusername,
             tag: vtag,
             userID: user.uid,
@@ -60,4 +60,22 @@ export default {
             private: vprivate
         });  
     },
+
+    // thispeek.get() is the function method to get a single peek from its document id
+    get: (id) => {
+        const db = firebase.firestore();
+        var peekRef = db.collection('peeks').doc(id);
+        peekRef.get()
+        .then(doc => {
+            if (!doc.exists) {
+            console.log('No such document!');
+            } else {
+            console.log('Document data:', doc.data());
+            return doc.data();
+            }
+        })
+        .catch(err => {
+            console.log('Error getting document', err);
+        });
+    }
 };

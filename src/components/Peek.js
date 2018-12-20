@@ -2,6 +2,7 @@ import React from 'react';
 import firebase from "../config/firebase";
 import Map from "../components/Maps";
 import thispeek from "../utils/thispeek.js";
+import allpeeks from "../utils/allpeeks.js";
 import ImgButton from "../components/ImgButton.js";
 
 var MapStyle = {
@@ -40,6 +41,8 @@ class Peek extends React.Component {
 
     // update state whenever a tracked form field is changed
     updateInput = e => {
+      // const hello = allpeeks.equalto("username", "Michael Cumings");  
+      // console.log(hello);
         this.setState({
           [e.target.name]: e.target.value
         });
@@ -48,7 +51,8 @@ class Peek extends React.Component {
     
     // the function called to add a peek to the firestore db
     // each attribute is taken from state, which is taken from form fields
-    // verification/cleaning is managed in thispeek.js   
+    // verification/cleaning is managed in thispeek.js 
+
     addPeek = e => {
       thispeek.write({
           tag: this.state.tag,

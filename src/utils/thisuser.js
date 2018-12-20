@@ -1,7 +1,7 @@
 import firebase from "firebase";
 
 export default {
-    // thispeek.write() is the function method to add a new user to the db.
+    // thisuser.write() is the function method to add a new user to the db.
     // This is the "user" collection of our app, which is separate from the
     // list of users in the Authentication tab of our firebase console,
     // though there should be a user document for each user listed there.
@@ -29,4 +29,22 @@ export default {
             bio: vbio,
         });  
     },
+
+    // thisuser.get() is the function method to get a user document by id.
+    get: (id) => {
+        const db = firebase.firestore();
+        var userRef = db.collection('users').doc(id);
+        userRef.get()
+        .then(doc => {
+            if (!doc.exists) {
+            console.log('No such document!');
+            } else {
+            console.log('Document data:', doc.data());
+            return doc.data();
+            }
+        })
+        .catch(err => {
+            console.log('Error getting document', err);
+        });
+    }
 };
