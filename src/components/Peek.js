@@ -13,9 +13,6 @@ var MapStyle = {
 
 // This component simply provides some fields to test writes to the firestore db
 
-// image will be assigned to a file later on
-let imageupload = null;
-
 class Peek extends React.Component {
 
     // this is the callback function to get the URL to an uploaded file

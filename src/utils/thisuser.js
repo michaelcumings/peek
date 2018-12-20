@@ -26,11 +26,14 @@ export default {
             });
             db.collection("users").add({
             username: vusername,
+            userID: user.uid,
             bio: vbio,
         });  
     },
 
     // thisuser.get() is the function method to get a user document by id.
+    // currently the ID of the User document assigned to this user,
+    // not the uid of the user from the Authentication table.
     get: (id) => {
         const db = firebase.firestore();
         var userRef = db.collection('users').doc(id);
@@ -49,6 +52,8 @@ export default {
     },
 
     // thisuser.delete() is the function method to delete a single user from its id.
+    // currently the ID of the User document assigned to this user,
+    // not the uid of the user from the Authentication table.
     delete: (id)  => {
         const collection = firebase.firestore().collection('users');
         return collection.doc(id).delete()
