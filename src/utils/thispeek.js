@@ -77,5 +77,14 @@ export default {
         .catch(err => {
             console.log('Error getting document', err);
         });
+    },
+
+    // thispeek.delete() is the function method to delete a single peek from its id.
+    delete: (id)  => {
+        const collection = firebase.firestore().collection('peeks');
+        return collection.doc(id).delete()
+          .catch(function(error) {
+            console.error('Error removing document: ', error);
+          });
     }
 };

@@ -46,5 +46,14 @@ export default {
         .catch(err => {
             console.log('Error getting document', err);
         });
+    },
+
+    // thisuser.delete() is the function method to delete a single user from its id.
+    delete: (id)  => {
+        const collection = firebase.firestore().collection('users');
+        return collection.doc(id).delete()
+        .catch(function(error) {
+            console.error('Error removing document: ', error);
+        });
     }
 };
