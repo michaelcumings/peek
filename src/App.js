@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import PrivatePage from "./pages/PrivatePage";
 import UserPeeks from "./pages/UserPeeks";
+import Footer from "./components/footer"
 
 
 function App() {
@@ -21,8 +22,10 @@ function App() {
           <Route exact path="/PrivatePage" component={Login} />
           <Route exact path="/UserPeeks" component={UserPeeks} />
           </Switch>
-    
+          <Footer/>   
       </div>
+
+     
     </Router>
 
   );

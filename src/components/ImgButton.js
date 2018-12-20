@@ -47,7 +47,7 @@ handleChange = e => {
     render () {
         return (
             <div>
-                <input 
+                <input  className="form-group mx-sm-3 mb-2"
                 type = "file" 
                 onChange={this.handleChange} />
                 <br/>

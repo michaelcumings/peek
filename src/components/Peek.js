@@ -4,6 +4,12 @@ import Map from "../components/Maps";
 import thispeek from "../utils/thispeek.js";
 import ImgButton from "../components/ImgButton.js";
 
+var MapStyle = {
+  width:'100%',
+  height:'100%',
+};
+
+
 // This component simply provides some fields to test writes to the firestore db
 
 // image will be assigned to a file later on
@@ -68,62 +74,105 @@ class Peek extends React.Component {
       
   render() {
     return (
-      <div>
-      <p>Add a Peek:</p>
-        <form onSubmit={this.addPeek}>
-          {/* These are user-provided fields for peek db info, additional fields are
-          provided for in thispeek.js */}
-
-          {/* The first button is its own component containing the logic to:
-          1. Take a file from the user
-          2. Put the file into firebase storage
-          3. return the image URL to this component with the callback function */}
-          <ImgButton callbackFromParent={this.urlCallback} />
-          <input
-            type="text"
-            name="tag"
-            placeholder="Tag"
-            onChange={this.updateInput}
-            value={this.state.tag}
-          />
-          <input
-            type="text"
-            name="description"
-            placeholder="Description"
-            onChange={this.updateInput}
-            value={this.state.description}
-          />
-          <input
-            type="text"
-            name="location"
-            placeholder="Location"
-            onChange={this.updateInput}
-            value={this.state.location}
-          />
-
-        <label>
-          Ends?:
-          <input
-            name="ends"
-            type="checkbox"
-            checked={this.state.ends}
-            onChange={this.updateInput} />
-        </label>
-
-        <label>
-          Private?:
-          <input
-            name="private"
-            type="checkbox"
-            checked={this.state.private}
-            onChange={this.updateInput} />
-        </label>
-       
-          <button type="submit">Submit</button>
-          <Map/>  
+ 
+      
+        <form className ="form-group" onSubmit={this.addPeek}>
+        <div className="card">
      
-        </form>
-        </div>
+          <div className="card-body">
+            <h5 className="card-title">Add a Peek:</h5>
+            <p></p>
+              {/* These are user-provided fields for peek db info, additional fields are
+              provided for in thispeek.js */}
+
+              {/* The first button is its own component containing the logic to:
+              1. Take a file from the user
+              2. Put the file into firebase storage
+              3. return the image URL to this component with the callback function */}
+
+                <div className="container">
+                <div className="row">
+                  <div className="col-lg-6"> 
+                      <div className="col-lg-6"> 
+                          <div className="row">
+                            <ImgButton callbackFromParent={this.urlCallback} />
+                          </div>
+
+                          <div className="row">    <div className="col-lg-6"> 
+                            <label className="col-form-label" for="tag">Tag: </label></div>
+                            <div className="col-lg-6"> 
+                            <input  class="form-group mx-sm-3 mb-2"
+                              type="text"
+                              name="tag"
+                              placeholder="Tag"
+                              onChange={this.updateInput}
+                              value={this.state.tag}
+                            />
+                            </div></div>
+                            
+                            <div className="row">    <div class="col-lg-6"> 
+                              <label className="col-form-label" for="description">Description: </label> </div>
+                              <div className="col-lg-6"> 
+                              <input  className="form-group mx-sm-3 mb-2"
+                                type="text"
+                                name="description"
+                                placeholder="Description"
+                                onChange={this.updateInput}
+                                value={this.state.description}
+                              /></div> </div>
+                          
+                          <div className="row">
+                          <div className="col-lg-6"> 
+                              <label className="col-form-label" for="location">Location: </label> </div>
+                              <div className="col-lg-6"> 
+                              <input  className="form-group mx-sm-3 mb-2"
+                                type="text"
+                                name="location"
+                                placeholder="Location"
+                                onChange={this.updateInput}
+                                value={this.state.location}
+                              /></div> </div>
+                              
+                              <div className="row">
+                              <div className="col-lg-6"> 
+                                      <label>
+                                        Ends?:
+                                        <input  class="form-group mx-sm-3 mb-2"
+                                          name="ends"
+                                          type="checkbox"
+                                          checked={this.state.ends}
+                                          onChange={this.updateInput} className="col-form-label"/>
+                                      </label>
+                                </div>
+                                <div className="col-lg-6"> 
+                                    <label>
+                                      Private?:
+                                      <input  className="form-group mx-sm-3 mb-2"
+                                        name="private"
+                                        type="checkbox"
+                                        checked={this.state.private}
+                                        onChange={this.updateInput} className="col-form-label"/>
+                                    </label>
+                              </div></div>
+                              <div className="row">
+                              <div className="col-lg-6"> 
+                                <button className="btn btn-success"   type="submit">Submit</button>
+                              </div> </div>
+                    
+                          </div>
+                      </div>
+                
+                  <div class="col-lg-6" >
+                    <Map />  
+                    </div>
+                    </div>
+                </div>  
+              
+          </div>
+      </div>
+  
+  </form>
+    
         );
       }
    }

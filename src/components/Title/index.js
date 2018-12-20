@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import "../Title/style.css"
+import LogInButton from '../LogInButton/index';
+import firebase from "firebase";
 
 class Title extends Component {
   render() {
+
     return (
-      <div>
-        <h1>Peek</h1>
-      </div>
+      <div className="container title"> 
+        <h1 className="text-center display-4">
+         PEEK!</h1>
+        <p className="lead">This app allows you to share information about anything and everything. All you have to do is enable locations settings, add images , tags and descriptions.</p>
+        <a className="btn btn-primary" href="https://github.com/nicksedillos/peek" role="button">Learn more @ GitHub</a>
+        
+        <hr className="my-4"/>     
+        </div>
     );
   }
 }

@@ -10,17 +10,31 @@ class PrivatePage extends Component {
   render() {
     const { userID } = this.props;
     return (
-      <div className="col-md-6">
-        <span>
-          <button onClick={() => firebase.auth().signOut()}> Sign Out</button>
-          <h1>Welcome - {firebase.auth().currentUser.displayName}</h1>
-          <img alt="" src={firebase.auth().currentUser.photoURL} />
-        </span>
-
-        <User userID={userID} />
-        <p />
-        <Peek userID={userID} />
+    <div className="container">
+        <div className="row">
+            <div className="col-lg-3"> 
+                <div className="row">
+               <p> Welcome - {firebase.auth().currentUser.displayName}</p>
+                </div>
+                <div className ="row">              
+                <object data="https://image.flaticon.com/icons/svg/53/53060.svg" width="250" height="200">
+                  <img src={firebase.auth().currentUser.photoURL} alt="User profile">
+                </img>
+            </object>
+                </div>
+            </div>
+            <div className="col-lg-6"> 
+              <User userID={userID} />
+            </div>
+           
+            <div className="col-lg-3 text-right">
+            <button className =" btn Light"onClick={() => firebase.auth().signOut()}> Logout Out</button>
+            </div>
+        </div>            
+          <Peek userID={userID} />
       </div>
+
+
     );
   }
 }
