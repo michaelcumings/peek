@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 function LogInButton() {
   return (
 		<Link to="/Login">
-			<button type="button" class="btn btn-primary">Log In</button>
+			<button type="button" className="btn btn-primary">Log In</button>
 		</Link>
   );
 };

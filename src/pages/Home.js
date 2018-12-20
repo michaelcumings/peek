@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import LogInButton from '../components/LogInButton';
 import Map from "../components/Maps";
+import display from "../components/display";
+
 
 class Home extends Component {
   render() {
+    
     return (
-			<div>
-					<LogInButton />
-					<Map/>
+      <div className="container">
+      <p> All Public user peeks</p>   
   
-
-				{/* If user is logged in, display the New Peek button. Otherwise, display the Log In button. */}
-			</div>
+      </div>
     );
   }
 }

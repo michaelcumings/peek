@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from "../config/firebase";
 import thisuser from "../utils/thisuser.js"
+import "../components/style/style.css"
 
 // This component simply provides some fields to test writes to the firestore db
 
@@ -41,17 +42,19 @@ class User extends React.Component {
     return (
       <div>
       <p>Add a User Record:</p>
-        <form onSubmit={this.addUser}>
+        <form className="form-group" onSubmit={this.addUser}>
         {/* This is the only field included in the form, since the other user information
         will be drawn directly from firebase */}
+        <label className="col-form-label" for="Bio">Bio: </label>
           <input
             type="text"
             name="bio"
             placeholder="Bio"
             onChange={this.updateInput}
             value={this.state.bio}
+            class="form-group mx-sm-3 mb-2"
           />
-          <button type="submit">Submit</button>
+          <button className="btn btn-success"type="submit">Submit</button>
         </form>
         </div>
         );

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import thisPeek from "../utils/thispeek.js";
-import thisUser from "../utils/thisuser";
+// import thisUser from "../utils/thisuser";
 const mapStyles = {
   map: {
     position: 'absolute',
-    width: '70%',
-    height: '30%'
+    width: '100%',
+    height: '100%'
   }
 };
 
@@ -45,9 +45,9 @@ export class CurrentLocation extends React.Component {
           map.panTo(center);
           console.log("I am in recenterMap" + center);
          
-          thisUser.write({
-            bio: this.state.bio,
-          }); 
+          // thisUser.write({
+          //   bio: this.state.bio,
+          // }); 
      
           thisPeek.write({
             tag: this.state.tag,
@@ -126,12 +126,10 @@ export class CurrentLocation extends React.Component {
       render() {
         const style = Object.assign({}, mapStyles.map);
        return (
-         <div>
-           <div style={style} ref="map">
-             Loading map...
-           </div>
-           {this.renderChildren()}
+            <div style={style} ref="map">
+            {this.renderChildren()}
          </div>
+ 
        );
      }
     
