@@ -9,17 +9,20 @@ export default {
         var queryRef = peeksRef.where(attribute, "==", value);
         console.log(queryRef);
         queryRef.get()
-        .then(doc => {
-            if (!doc.exists) {
-            console.log('No such document!');
-            } else {
-            console.log('Document data:', doc.data());
-            return doc.data();
+        .then(snapshot => {
+            if (snapshot.empty) {
+            console.log('No matching documents');
+            return;
             }
+            snapshot.forEach(doc => {
+                console.log(doc.id, '=>', doc.data());
+            });
+            return snapshot;
         })
         .catch(err => {
-            console.log('Error getting document', err);
-        });
+            console.log("Error getting documents", err);
+        });    
+           
     }
 };
 
