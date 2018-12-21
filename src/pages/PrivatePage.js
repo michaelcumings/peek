@@ -23,7 +23,9 @@ class PrivatePage extends Component {
             <User userID={userID} />
           </div> 
           <div className="col-lg-3 text-right">
-            <button className =" btn Light"onClick={() => firebase.auth().signOut()}> Logout Out</button>
+            <button className =" btn Light"onClick={() => firebase.auth().signOut()}>
+              Log Out
+            </button>
           </div>
         </div>            
         <Peek userID={userID} />
