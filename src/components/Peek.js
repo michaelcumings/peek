@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from "../config/firebase";
-import Map from "../components/Maps";
+import Map from "./Map";
 import thispeek from "../utils/thispeek.js";
 import allpeeks from "../utils/allpeeks.js";
 import ImgButton from "../components/ImgButton.js";
@@ -14,6 +14,14 @@ var MapStyle = {
 // This component simply provides some fields to test writes to the firestore db
 
 class Peek extends React.Component {
+
+    // this is the callback function to get the current location
+    // from the CurrentLocation component, and write it to this.state.image
+    locationCallback = (currentLocation) => {
+      this.setState({
+        location: currentLocation
+      });
+    }
 
     // this is the callback function to get the URL to an uploaded file
     // from the ImgButton component, and write it to this.state.image
@@ -38,7 +46,7 @@ class Peek extends React.Component {
 
     // update state whenever a tracked form field is changed
     updateInput = e => {
-      // const hello = allpeeks.equalto("username", "Michael Cumings");  
+      // const hello = allpeeks.all();  
       // console.log(hello);
         this.setState({
           [e.target.name]: e.target.value
@@ -122,7 +130,7 @@ class Peek extends React.Component {
                                 value={this.state.description}
                               /></div> </div>
                           
-                          <div className="row">
+                          {/* <div className="row">
                           <div className="col-lg-6"> 
                               <label className="col-form-label" for="location">Location: </label> </div>
                               <div className="col-lg-6"> 
@@ -132,7 +140,7 @@ class Peek extends React.Component {
                                 placeholder="Location"
                                 onChange={this.updateInput}
                                 value={this.state.location}
-                              /></div> </div>
+                              /></div> </div> */}
                               
                               <div className="row">
                               <div className="col-lg-6"> 
@@ -157,14 +165,22 @@ class Peek extends React.Component {
                               </div></div>
                               <div className="row">
                               <div className="col-lg-6"> 
+                              {this.state.image &&
+                                this.state.location &&
                                 <button className="btn btn-success"   type="submit">Submit</button>
+                              }
+                              {/* {this.state.image ? (
+                                <button className="btn btn-success"   type="submit">Submit</button>
+                                ):(
+                                  <p>Waiting on Image...</p>
+                                )} */}
                               </div> </div>
                     
                           </div>
                       </div>
                 
                   <div class="col-lg-6" >
-                    <Map />  
+                    <Map cbFromParent={this.locationCallback}/>  
                     </div>
                     </div>
                 </div>  
