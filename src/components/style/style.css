@@ -1,17 +1,16 @@
-p{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.2em;
-    color: darkslategrey;
+p {
+  font-family: 'Franklin Gothic Book', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.2em;
+  color: darkslategrey;
 }
 
-.lead{
-    color: white;
+.lead {
+  color: white;
 }
 
-.footer p{
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: blueviolet;
-    background-image: URL(http://luxalobeautys.org/wp-content/uploads/2018/10/pages-background-color-page-color-page-color-page-background-color-colouring-book.jpg);
-
+.footer p {
+  font-size: 1em;
+  color: #947D36;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #EAEE97;
 }

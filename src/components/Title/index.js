@@ -8,7 +8,9 @@ class Title extends Component {
 
     return (
       <div className="container title"> 
-        <h1 className="text-center display-4">PEEK!</h1>
+        <h1 className="text-center display-4">
+          PEEK!
+        </h1>
         <p className="lead">
           This app allows you to share information about anything and everything. All you have to do is enable location settings, add images, tags and descriptions.
         </p>
