@@ -15,13 +15,14 @@ var MapStyle = {
 
 class Peek extends React.Component {
 
-
-
+    // this is the callback function to get the current location
+    // from the CurrentLocation component, and write it to this.state.image
     locationCallback = (currentLocation) => {
       this.setState({
         location: currentLocation
       });
     }
+
     // this is the callback function to get the URL to an uploaded file
     // from the ImgButton component, and write it to this.state.image
     urlCallback = (imageURL) => {
@@ -45,7 +46,7 @@ class Peek extends React.Component {
 
     // update state whenever a tracked form field is changed
     updateInput = e => {
-      // const hello = allpeeks.equalto("username", "Michael Cumings");  
+      // const hello = allpeeks.all();  
       // console.log(hello);
         this.setState({
           [e.target.name]: e.target.value
@@ -164,7 +165,15 @@ class Peek extends React.Component {
                               </div></div>
                               <div className="row">
                               <div className="col-lg-6"> 
+                              {this.state.image &&
+                                this.state.location &&
                                 <button className="btn btn-success"   type="submit">Submit</button>
+                              }
+                              {/* {this.state.image ? (
+                                <button className="btn btn-success"   type="submit">Submit</button>
+                                ):(
+                                  <p>Waiting on Image...</p>
+                                )} */}
                               </div> </div>
                     
                           </div>

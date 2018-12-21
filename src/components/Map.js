@@ -11,10 +11,6 @@ export class MapContainer extends Component {
     selectedPlace: {}
   };
   
-  // locationCallback = (currentLocation) => {
-  //   return currentLocation;
-  // };
-
   onMarkerClick = (props, marker, e) =>
     this.setState({
       selectedPlace: props,
@@ -38,11 +34,6 @@ export class MapContainer extends Component {
         centerAroundCurrentLocation
         google={this.props.google}
         cbFromParent={this.props.cbFromParent}
-        // {(t) => {
-        //   this.setState({
-        //     location: this.state.currentLocation
-        //   });
-        // }}
       >        
         <Marker onClick={this.onMarkerClick} name={'current location'} />
         <InfoWindow

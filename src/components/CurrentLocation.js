@@ -44,19 +44,6 @@ export class CurrentLocation extends React.Component {
           let center = new maps.LatLng(current.lat, current.lng);
           map.panTo(center);
           console.log("I am in recenterMap" + center);
-         
-          // thisUser.write({
-          //   bio: this.state.bio,
-          // }); 
-     
-          thisPeek.write({
-            tag: this.state.tag,
-            description: this.state.description,
-            image: this.state.image,
-            location: this.state.currentLocation,
-            ends: this.state.ends,
-            private: this.state.private
-          }); 
    
         }
       }
