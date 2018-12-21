@@ -24,3 +24,9 @@ a {
   color: #947D36;
   background-color: #EAEE97;
 }
+
+.userNameDisplay {
+  color: #93442C;
+  font-family: 'Major Mono Display', monospace;
+  font-weight: bold;
+}
