@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Map from "../components/Maps";
+// import Map from "../components/Maps";
 import display from "../components/display";
 
 

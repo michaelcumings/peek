@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from "../config/firebase";
-import Map from "../components/Maps";
+import Map from "./Map";
 import thispeek from "../utils/thispeek.js";
 import allpeeks from "../utils/allpeeks.js";
 import ImgButton from "../components/ImgButton.js";
@@ -15,6 +15,13 @@ var MapStyle = {
 
 class Peek extends React.Component {
 
+
+
+    locationCallback = (currentLocation) => {
+      this.setState({
+        location: currentLocation
+      });
+    }
     // this is the callback function to get the URL to an uploaded file
     // from the ImgButton component, and write it to this.state.image
     urlCallback = (imageURL) => {
@@ -122,7 +129,7 @@ class Peek extends React.Component {
                                 value={this.state.description}
                               /></div> </div>
                           
-                          <div className="row">
+                          {/* <div className="row">
                           <div className="col-lg-6"> 
                               <label className="col-form-label" for="location">Location: </label> </div>
                               <div className="col-lg-6"> 
@@ -132,7 +139,7 @@ class Peek extends React.Component {
                                 placeholder="Location"
                                 onChange={this.updateInput}
                                 value={this.state.location}
-                              /></div> </div>
+                              /></div> </div> */}
                               
                               <div className="row">
                               <div className="col-lg-6"> 
@@ -164,7 +171,7 @@ class Peek extends React.Component {
                       </div>
                 
                   <div class="col-lg-6" >
-                    <Map />  
+                    <Map cbFromParent={this.locationCallback}/>  
                     </div>
                     </div>
                 </div>  
