@@ -4,6 +4,11 @@ p {
   color: darkslategrey;
 }
 
+a {
+  color: #947D36;
+  font-weight: bold;
+}
+
 .btn-primary {
   color: #EAEE97;
   background-color: #947D36;
