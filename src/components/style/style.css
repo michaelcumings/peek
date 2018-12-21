@@ -4,8 +4,14 @@ p {
   color: darkslategrey;
 }
 
+.btn-primary {
+  color: #EAEE97;
+  background-color: #947D36;
+  border-color: #947D36;
+}
+
 .lead {
-  color: white;
+  color: #947D36;
 }
 
 .footer p {
