@@ -14,13 +14,11 @@ class PrivatePage extends Component {
         <div className="row">
             <div className="col-lg-3"> 
                 <div className="row">
-               <p> Welcome - {firebase.auth().currentUser.displayName}</p>
+               <p>{firebase.auth().currentUser.displayName}  <img class = "profilePic"src={firebase.auth().currentUser.photoURL} alt="User profile">
+               </img></p>
                 </div>
                 <div className ="row">              
-                <object data="https://image.flaticon.com/icons/svg/53/53060.svg" width="250" height="200">
-                  <img src={firebase.auth().currentUser.photoURL} alt="User profile">
-                </img>
-            </object>
+                 
                 </div>
             </div>
             <div className="col-lg-6"> 
