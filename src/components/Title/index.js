@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "../Title/style.css"
-import LogInButton from '../LogInButton/index';
-import firebase from "firebase";
+// import LogInButton from '../LogInButton/index';
+// import firebase from "firebase";
 
 class Title extends Component {
   render() {
