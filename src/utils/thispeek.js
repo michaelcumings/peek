@@ -7,15 +7,15 @@ export default {
         // image and location values are both mandatory to create a peek.
         // If either or both are missing, error is written to console and
         // the peek is not created.
-        if (!newpeek.image) {
-            console.log("thispeek.write failed; no image in request");
-            return;
-        }
+        // if (!newpeek.image) {
+        //     console.log("thispeek.write failed; no image in request");
+        //     return;
+        // }
 
-        if (!newpeek.location) {
-            console.log("thispeek.write failed; no location in request");
-            return;
-        }
+        // if (!newpeek.location) {
+        //     console.log("thispeek.write failed; no location in request");
+        //     return;
+        // }
 
         // vends and vprivate are verified values of the boolean "ends" and
         // "private" form checkboxes.  This defaults the values to false, and
@@ -80,7 +80,7 @@ export default {
     },
 
     // thispeek.delete() is the function method to delete a single peek from its id.
-    delete: (id)  => {
+    delete: (id) => {
         const collection = firebase.firestore().collection('peeks');
         return collection.doc(id).delete()
           .catch(function(error) {

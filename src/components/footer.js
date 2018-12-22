@@ -1,6 +1,7 @@
 // Dependencies
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from 'react';
+// ,{ Component }
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "../components/style/style.css"
 
 // Button which will direct user to the Login page.

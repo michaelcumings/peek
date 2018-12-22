@@ -10,7 +10,7 @@ var config = {
     messagingSenderId: "511969212938"
   };
 
-const fb = firebase.initializeApp(config);
+firebase.initializeApp(config);
 
 const storage = firebase.storage();
 
