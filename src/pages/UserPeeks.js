@@ -54,7 +54,6 @@ class UserPeeks extends Component {
                      <li>description: {peek.description}</li>
                      <li>Location: {peek.location.lat}, {peek.location.lng}</li>
                      <img height= "150px" src= {peek.image} />
-                    <div>-----------------------</div>
                   </ListItem>
                 ))}
               </List>
