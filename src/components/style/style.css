@@ -1,12 +1,33 @@
+/*
+#B2D828 ("fuego green")
+#EAEE97 ("jonquil green")
+#947D36 ("highball green")
+#93442C ("tia maria orange")
+#4F301A ("brown bramble")
+*/
+
 p {
   font-family: 'Lato', sans-serif;
-  font-size: 1.2em;
-  color: darkslategrey;
+  font-size: 1em;
+  color: #4F301A;
+  margin: 0;
 }
 
 a {
   color: #947D36;
   font-weight: bold;
+}
+
+a:hover {
+  color: #93442C;
+}
+
+h2 {
+  font-family: 'Aleo', serif;
+  font-size: 1.5em;
+  color: #4F301A;
+  text-align: center;
+  margin: 0.2em;
 }
 
 .btn-primary {
@@ -15,12 +36,33 @@ a {
   border-color: #947D36;
 }
 
+.btn-primary:hover {
+  background-color: #93442C;
+  border-color: #93442C;
+}
+
 .lead {
   color: #947D36;
 }
 
+.footer div {
+  padding: 0.4em;
+}
+
 .footer p {
-  font-size: 1em;
+  font-size: 0.8em;
   color: #947D36;
   background-color: #EAEE97;
+}
+
+.nav-tabs .nav-link.active {
+  color: #93442C;
+  background-color: #EAEE97;
+}
+
+.userNameDisplay {
+  color: #93442C;
+  font-family: 'Aleo', serif;
+  font-weight: bold;
+  font-size: 1.5em;
 }

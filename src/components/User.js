@@ -45,14 +45,14 @@ class User extends React.Component {
         <form className="form-group" onSubmit={this.addUser}>
         {/* This is the only field included in the form, since the other user information
         will be drawn directly from firebase */}
-        <label className="col-form-label" for="Bio">Bio: </label>
+        <label className="col-form-label" htmlFor="Bio">Bio: </label>
           <input
             type="text"
             name="bio"
             placeholder="Bio"
             onChange={this.updateInput}
             value={this.state.bio}
-            class="form-group mx-sm-3 mb-2"
+            className="form-group mx-sm-3 mb-2"
           />
           <button className="btn btn-success"type="submit">Submit</button>
         </form>
