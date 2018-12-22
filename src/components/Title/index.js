@@ -10,9 +10,6 @@ class Title extends Component {
         <h1 className="text-center display-4">
           PEEK!
         </h1>
-        <a className="btn btn-primary" href="https://github.com/nicksedillos/peek" role="button">
-          Learn more @ GitHub
-        </a>
         <hr className="my-4"/>     
       </div>
     );
