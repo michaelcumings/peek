@@ -22,6 +22,14 @@ a:hover {
   color: #93442C;
 }
 
+h2 {
+  font-family: 'Aleo', serif;
+  font-size: 1.5em;
+  color: #4F301A;
+  text-align: center;
+  margin: 0.2em;
+}
+
 .btn-primary {
   color: #EAEE97;
   background-color: #947D36;

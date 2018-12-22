@@ -9,6 +9,7 @@ import "../App.css"
 
 class Login extends Component {
   state = { isSignedIn: false };
+
   // Set a UI config. We will redirect on the login options.
   uiConfig = {
     signInFlow: "popup",
@@ -38,14 +39,19 @@ class Login extends Component {
       <div className = "App">
         <div className="container-fluid">
         {this.state.isSignedIn ?(
-          ( <PrivatePage/> )
-        )
-        :(
-          <StyledFirebaseAuth
-            uiConfig={this.uiConfig}
-            firebaseAuth={firebase.auth()}
-          />
-        ) 
+            ( <PrivatePage/> )
+          )
+          :(
+            <div>
+              <h2>
+                See what's happening out in the <em>real world</em>. Join Peek!
+              </h2>
+              <StyledFirebaseAuth
+                uiConfig={this.uiConfig}
+                firebaseAuth={firebase.auth()}
+              />
+            </div>
+          )
         }
         </div>
       </div>
