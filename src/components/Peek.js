@@ -5,12 +5,11 @@ import Map from "./Map";
 import thispeek from "../utils/thispeek.js";
 // import allpeeks from "../utils/allpeeks.js";
 import ImgButton from "../components/ImgButton.js";
-
-// var MapStyle = {
-//   width:'100%',
-//   height:'100%',
-// };
-
+import "./Peek.css"
+var MapStyle = {
+  width:'100%',
+  height:'100%',
+};
 var user = firebase.auth().currentUser;
 
 // This component simply provides some fields to test writes to the firestore db
@@ -118,7 +117,7 @@ class Peek extends React.Component {
               2. Put the file into firebase storage
               3. return the image URL to this component with the callback function */}
 
-                <div className="container">
+                <div className="container-fluid cont">
                 <div className="row">
                   <div className="col-lg-6"> 
                       <div className="col-lg-6"> 
@@ -197,8 +196,7 @@ class Peek extends React.Component {
                     
                           </div>
                       </div>
-                
-                  <div className="col-lg-6" >
+                  <div class="col-lg-6 mapCard" >
                     <Map cbFromParent={this.locationCallback}/>  
                     </div>
                     </div>

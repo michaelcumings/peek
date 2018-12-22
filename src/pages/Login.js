@@ -37,6 +37,7 @@ class Login extends Component {
   render() {
     return (
       <div className = "App">
+      
         <div className="container-fluid">
         {this.state.isSignedIn ?(
             ( <PrivatePage/> )

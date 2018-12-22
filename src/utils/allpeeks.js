@@ -8,15 +8,13 @@ export default {
         var peeksRef = db.collection('peeks');
         var queryRef = peeksRef.where(attribute, operator, value);
         console.log(queryRef);
-        queryRef.get()
+        return queryRef.get()
         .then(snapshot => {
             if (snapshot.empty) {
             console.log('No matching documents');
-            return;
+            return false;
             }
-            snapshot.forEach(doc => {
-                console.log(doc.id, '=>', doc.data());
-            });
+            console.log('PEEK LENGTH', snapshot.size);
             return snapshot;
         })
         .catch(err => {
