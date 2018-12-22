@@ -14,7 +14,7 @@ class PrivatePage extends Component {
         <div className="row">
             <div className="col-lg-3"> 
                 <div className="row">
-               <p>{firebase.auth().currentUser.displayName}  <img class = "profilePic"src={firebase.auth().currentUser.photoURL} alt="User profile">
+               <p>{firebase.auth().currentUser.displayName}  <img className = "profilePic"src={firebase.auth().currentUser.photoURL} alt="User profile">
                </img></p>
                 </div>
                 <div className ="row">              

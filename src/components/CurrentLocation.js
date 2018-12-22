@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import thisPeek from "../utils/thispeek.js";
+// import thisPeek from "../utils/thispeek.js";
 // import thisUser from "../utils/thisuser";
 const mapStyles = {
   map: {
