@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { GoogleApiWrapper, InfoWindow, Marker  } from 'google-maps-react';
 import CurrentLocation from "./CurrentLocation.js";
-
-
-
 export class MapContainer extends Component {
   state = {
     showingInfoWindow: false,

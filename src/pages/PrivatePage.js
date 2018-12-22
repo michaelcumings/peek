@@ -4,13 +4,14 @@ import User from "../components/User.js";
 import Peek from "../components/Peek.js";
 import firebase from "firebase";
 
+import "../App.css"
 
 class PrivatePage extends Component {
   //simple button with on Click
   render() {
     const { userID } = this.props;
     return (
-    <div className="container">
+    <div className="container-fluid">
         <div className="row">
             <div className="col-lg-3"> 
                 <div className="row">

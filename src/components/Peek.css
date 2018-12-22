@@ -1,0 +1,19 @@
+
+  .mapCard{
+border: red solid 5px  }
+  @media (min-width: 576px) { 
+    .container-fluid{
+      display: block;
+
+    }
+    
+   }
+.cont{
+  border: blue solid 5px  }
+    @media (min-width: 576px) { 
+      .container-fluid{
+        display: block;
+  
+      }
+      
+     }

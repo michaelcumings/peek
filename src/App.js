@@ -7,8 +7,9 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import PrivatePage from "./pages/PrivatePage";
 import UserPeeks from "./pages/UserPeeks";
-import Footer from "./components/footer"
+import pageNotFound from "./pages/pageNotFound";
 
+import Footer from "./components/footer"
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
           <Route exact path="/Login" component={Login} />
           <Route exact path="/PrivatePage" component={Login} />
           <Route exact path="/UserPeeks" component={UserPeeks} />
+          <Route component={pageNotFound} />
+
           </Switch>
           <Footer/>   
       </div>
